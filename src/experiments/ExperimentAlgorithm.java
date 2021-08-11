@@ -28,9 +28,9 @@ public class ExperimentAlgorithm {
         MOCDInstanceFactory factory = new MOCDInstanceFactory();
 
 
-        String dir = ((args.length == 0) ? "instances/" : (args[1] + "/"));
+        String dir = ((args.length == 0) ? "instances/prueba/" : (args[1] + "/"));
 
-        String outDir = "experiments/" + date;
+        String outDir = "results/" + date;
         File outDirCreator = new File(outDir);
         outDirCreator.mkdirs();
         String[] extensions = new String[]{".txt"};
