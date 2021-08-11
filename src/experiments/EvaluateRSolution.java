@@ -42,11 +42,11 @@ public class EvaluateRSolution {
                     br = new BufferedReader(new FileReader(fileReaded));
                     String line;
                     MOCDInstance instance;
-                    if (file.contains("chinos")){
+                    if (file.contains("previous")){
                         if (file.contains("500")){
-                            instance = new MOCDInstance("instances/chinos/"+file.substring(file.lastIndexOf('/')));
+                            instance = new MOCDInstance("instances/previos/"+file.substring(file.lastIndexOf('/')));
                         }else{
-                            instance = new MOCDInstance("instances/chinos_1000/"+file.substring(file.lastIndexOf('/')));
+                            instance = new MOCDInstance("instances/previos_1000/"+file.substring(file.lastIndexOf('/')));
                         }
                     }else if (file.contains("500") || file.contains("1000")){
                         instance = new MOCDInstance("instances/lfr/"+file.substring(file.lastIndexOf('/')));

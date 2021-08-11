@@ -13,11 +13,11 @@ public class GetBestModularity {
         for (String nameDir : dirsToEvaluate) {
             String[] extensions = new String[]{".txt"};
             //Previous
-//            List<String> files = readFilesInFolder("experiments/2021-06-09/resultadosChinos1800sec_rev1SUYOS/" + nameDir + "/", extensions);
+//            List<String> files = readFilesInFolder("experiments/2021-06-09/resultadosPrevious1800sec_rev1SUYOS/" + nameDir + "/", extensions);
             List<String> files = readFilesInFolder(nameDir + "/", extensions);
 
             for (String file : files) {
-                if(file.contains("onlyPareto") || file.contains("edgesnetworknetwork.txt") || file.contains("chinosnetwork") || file.contains("bestModularity")) continue;
+                if(file.contains("onlyPareto") || file.contains("edgesnetworknetwork.txt") || file.contains("previosnetwork") || file.contains("bestModularity")) continue;
                 File fileReaded = new File(file);
                 BufferedReader br;
                 int bestSol = 1;
@@ -67,7 +67,7 @@ public class GetBestModularity {
                     e.printStackTrace();
                 }
                 // Previous
-//                String outDir = "experiments/2021-06-09/resultadosChinos1800sec_rev1SUYOS/"+nameDir+"/";
+//                String outDir = "experiments/2021-06-09/resultadosPrevios1800sec_rev1SUYOS/"+nameDir+"/";
                 String outDir = nameDir+"/";
 
                 try{

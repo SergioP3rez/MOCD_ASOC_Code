@@ -27,7 +27,7 @@ public class EvaluatePreviousSolution {
         for (String nameDir : dirsToEvaluate) {
             Pareto.reset();
             String[] extensions = new String[]{"_1.txt", "_2.txt", "_3.txt", "_4.txt", "_5.txt", "_6.txt", "_7.txt", "_8.txt", "_9.txt", "_10.txt"};
-            List<String> files = readFilesInFolder("/Users/sergio/OneDrive - Universidad Rey Juan Carlos/Investigacion URJC/MOCD/instances/ground_truth_real/resultados_chinos_paraNMI/" + nameDir +"/", extensions);
+            List<String> files = readFilesInFolder("/Users/sergio/OneDrive - Universidad Rey Juan Carlos/Investigacion URJC/MOCD/instances/ground_truth_real/resultados_previos_paraNMI/" + nameDir +"/", extensions);
 
             for (String file : files) {
                 File fileReaded = new File(file);
@@ -35,7 +35,7 @@ public class EvaluatePreviousSolution {
                 try {
                     br = new BufferedReader(new FileReader(fileReaded));
                     String line;
-                    MOCDInstance instance = new MOCDInstance("instances/finalversusprevious/"+nameDir+"_chinos.txt");
+                    MOCDInstance instance = new MOCDInstance("instances/finalversusprevious/"+nameDir+"_previo.txt");
                     MOCDSolution sol = new MOCDSolution(instance);
                     while ((line = br.readLine()) != null) {
                         line = line.replaceAll("\\[","").replaceAll("]", "");
@@ -54,7 +54,7 @@ public class EvaluatePreviousSolution {
                 }
                 System.out.println("Fichero " + fileReaded + " procesado.");
             }
-            String outDir = "experiments/"+date+"/resultadosChinos/";
+            String outDir = "experiments/"+date+"/resultadosPrevios/";
             File folder = new File(outDir.substring(0, outDir.lastIndexOf('/')));
             if (!folder.exists()) folder.mkdirs();
             Pareto.saveToFile(outDir + "/"+nameDir+"/pareto_"+nameDir+".txt");

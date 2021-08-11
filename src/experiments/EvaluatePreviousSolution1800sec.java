@@ -33,10 +33,10 @@ public class EvaluatePreviousSolution1800sec {
         for (String nameDir : dirsToEvaluate) {
             Pareto.reset();
             String[] extensions = new String[]{".txt"};
-//            List<String> files = readFilesInFolder("/Users/sergio/OneDrive - Universidad Rey Juan Carlos/Investigacion URJC/MOCD/instances/ground_truth_real/resultados_chinos_1800sec/" + nameDir +"/", extensions);
-//            List<String> files = readFilesInFolder("/Users/sergio/Downloads/output_chinos/"+nameDir, extensions);
+//            List<String> files = readFilesInFolder("/Users/sergio/OneDrive - Universidad Rey Juan Carlos/Investigacion URJC/MOCD/instances/ground_truth_real/resultados_previos_1800sec/" + nameDir +"/", extensions);
+//            List<String> files = readFilesInFolder("/Users/sergio/Downloads/output_previos/"+nameDir, extensions);
 //            List<String> files = readFilesInFolder("experiments/"+nameDir+"/Paralell_MO_RSVNS_UF_2LS(ConstructiveGRASPAggNEW(0.25),[Lgrafo.optilib.metaheuristics.Improvement;@21b8d17c, 0.3)", extensions);
-            List<String> files = readFilesInFolder("/Users/sergio/OneDrive - Universidad Rey Juan Carlos/Investigacion URJC/MOCD/instances/ground_truth_real/resultados_chinos_paraNMI_REVISION/" + nameDir + "/", extensions);
+            List<String> files = readFilesInFolder("/Users/sergio/OneDrive - Universidad Rey Juan Carlos/Investigacion URJC/MOCD/instances/ground_truth_real/resultados_previos_paraNMI_REVISION/" + nameDir + "/", extensions);
 
             for (String file : files) {
                 File fileReaded = new File(file);
@@ -44,7 +44,7 @@ public class EvaluatePreviousSolution1800sec {
                 try {
                     br = new BufferedReader(new FileReader(fileReaded));
                     String line;
-//                    MOCDInstance instance = new MOCDInstance("instances/finalversusprevious/"+nameDir+"_chinos.txt");
+//                    MOCDInstance instance = new MOCDInstance("instances/finalversusprevious/"+nameDir+"_previos.txt");
 //                    MOCDInstance instance = new MOCDInstance("instances/finalversusprevious/"+nameDir+"network.txt");
                     MOCDInstance instance;
                     if (!nameDir.contains("musae")) {
@@ -69,12 +69,12 @@ public class EvaluatePreviousSolution1800sec {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-//                String outDir = "experiments/"+date+"/resultadosChinos1800sec/";
+//                String outDir = "experiments/"+date+"/resultadosPrevios1800sec/";
 //                File folder = new File(outDir.substring(0, outDir.lastIndexOf('/')));
 //                if (!folder.exists()) folder.mkdirs();
 //                Pareto.saveToFile(outDir + "/"+nameDir+"/pareto_"+file.split("/")[10]+".txt");
             }
-            String outDir = "experiments/" + date + "/resultadosChinos1800sec_rev1/";
+            String outDir = "experiments/" + date + "/resultadosPrevios1800sec_rev1/";
             File folder = new File(outDir.substring(0, outDir.lastIndexOf('/')));
             if (!folder.exists()) folder.mkdirs();
             Pareto.saveToFile(outDir + "/" + nameDir + "/pareto_" + nameDir + ".txt");

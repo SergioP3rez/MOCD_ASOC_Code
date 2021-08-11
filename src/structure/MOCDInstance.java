@@ -37,12 +37,12 @@ public class MOCDInstance implements Instance {
                 tokens = line.split("\\s+");
                 int src;
                 int dst;
-                if (!name.contains("chinos")) {
-                    //PARA LEER NUESTRAS INSTANCIAS
+                if (!name.contains("previous")) {
+                    // TO READ PREVIOUS INSTANCES
                     src = Integer.parseInt(tokens[0]);
                     dst = Integer.parseInt(tokens[1]);
                 }else{
-                    //PARA LEER LAS DE LOS CHINOS
+                    // TO READ OURS
                     src = Integer.parseInt(tokens[0]) - 1;
                     dst = Integer.parseInt(tokens[1]) - 1;
                 }
